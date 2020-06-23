@@ -1,6 +1,6 @@
 {
 	"mssql": "pyodbc",
 	"mysql": "pyodbc",
-    "mongo": "pymongo",
-    "snowflake": ""
+	"mongo": "pymongo",
+	"snowflake": ""
 }

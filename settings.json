@@ -1,7 +1,7 @@
 {
     "db_engines": {
         "source": {
-            "engine": "mssql",
+            "engine": "ds.odbc",
             "user": "",
             "password": "",
             "host": "",
