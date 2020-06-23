@@ -1,0 +1,18 @@
+{
+    "db_engines": {
+        "source": {
+            "engine": "mssql",
+            "user": "",
+            "password": "",
+            "host": "",
+            "port": ""
+        },
+        "destination": {
+            "engine": "snowflake",
+            "user": "",
+            "password": "",
+            "host": "",
+            "port": ""
+        }
+    }
+}
