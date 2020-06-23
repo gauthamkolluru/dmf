@@ -2,15 +2,15 @@ import json
 import os
 
 
-def main():
+def pkg_details(ds_type):
     print(os.path.abspath(os.path.curdir))
-    with open(os.path.join(os.path.abspath(os.path.curdir), "settings.json"), "r") as sj:
-        with open(os.path.join(os.path.abspath(os.path.curdir), "db_engine_list.json"), "r") as el:
-            engine_list = json.load(el)
-            print(type(engine_list))
-        setting_list = json.load(sj)
-    return [engine_list[v["engine"]] for v in setting_list["db_engines"].values()]
+    if ds_type in ['source', 'destination']:
+        with open(os.path.join(os.path.abspath(os.path.curdir), "settings.json"), "r") as sj:
+            setting_list = json.load(sj)
+        return setting_list["db_engines"][ds_type]
+    return False
 
 
 if __name__ == "__main__":
-    print(main())
+    det = pkg_details('destination')
+    print(det)

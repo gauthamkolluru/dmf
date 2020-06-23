@@ -1,18 +1,22 @@
 {
     "db_engines": {
         "source": {
-            "engine": "ds.odbc",
+            "drivername": "mssql",
             "user": "",
             "password": "",
             "host": "",
-            "port": ""
+            "port": "0",
+            "database": "",
+            "query": ""
         },
         "destination": {
-            "engine": "snowflake",
+            "drivername": "snowflake",
             "user": "",
             "password": "",
             "host": "",
-            "port": ""
+            "port": "0",
+            "database": "",
+            "query": ""
         }
     }
 }
