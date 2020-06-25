@@ -1,12 +1,12 @@
 {
     "db_engines": {
         "source": {
-            "drivername": "mssql",
+            "drivername": "mssql+pyodbc",
             "user": "",
             "password": "",
-            "host": "",
+            "host": "localhost\\SQLEXPRESS",
             "port": "0",
-            "database": "",
+            "database": "test1",
             "query": ""
         },
         "destination": {
