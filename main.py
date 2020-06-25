@@ -42,6 +42,4 @@ if __name__ == "__main__":
     try:
         print(main())
     except Exception as e:
-        print(dir(e))
-        print(e)
-        print(e.__traceback__())
+        e.__traceback__
