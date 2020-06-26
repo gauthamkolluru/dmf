@@ -1,20 +1,20 @@
 {
     "db_engines": {
         "source": {
-            "drivername": "mssql+pyodbc",
-            "user": "",
+            "drivername": "mssql",
+            "username": "",
             "password": "",
             "host": "localhost\\SQLEXPRESS",
-            "port": "0",
+            "port": 0,
             "database": "test1",
             "query": ""
         },
         "destination": {
             "drivername": "snowflake",
-            "user": "",
+            "username": "",
             "password": "",
             "host": "",
-            "port": "0",
+            "port": 0,
             "database": "",
             "query": ""
         }

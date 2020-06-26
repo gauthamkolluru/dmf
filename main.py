@@ -19,12 +19,17 @@ def pkg_details(ds_type):
 
 
 def connection(ds_type):
-    con_det = pkg_details(ds_type)
-    DB_URL = "{}://{}/{}?driver=sql+server".format(
-        con_det['drivername'], con_det['host'], con_det['database'])
-    # DB_URL = sql_url(con_det['drivername'], host=con_det['host'], database=con_det['database'], query="driver=sql+server")
-    print(DB_URL)
-    return create_engine(DB_URL, echo=True), con_det['database']
+    db_det = pkg_details(ds_type)
+    # DB_URL_1 = "{}://{}/{}?driver=sql+server".format(
+    #     db_det['drivername'], db_det['host'], db_det['database'])
+    DB_URL_2 = repr(sql_url(db_det['drivername'],
+                            username=db_det['username'],
+                            password=db_det['password'],
+                            host=db_det['host'],
+                            port=db_det['port'],
+                            database=db_det['database'],
+                            query={"driver": "sql+server"}))
+    return create_engine(DB_URL_2, echo=True), db_det['database']
 
 
 def get_tables(conn):
@@ -45,9 +50,9 @@ def write_csv(file_name='', file_data=None, file_ext='.csv'):
     return True
 
 
-def split_csv(file_name='', file_ext='.csv'):
-    fs = FileSplit(file=file_name+file_ext, splitsize=10)
-    # return FileSplit(file=file_name+file_ext, splitsize=1000000000, output_dir=".")
+def split_csv(file_name='', file_ext='csv'):
+    fs = FileSplit(file=".".join([file_name, file_ext]), splitsize=10)
+    # fs = FileSplit(file=".".join([file_name, file_ext]), splitsize=1000000000)
     return fs.split(include_header=True)
 
 
@@ -67,4 +72,4 @@ if __name__ == "__main__":
     try:
         print(main())
     except Exception as e:
-        print(e.args)
+        print(e.__traceback__())
