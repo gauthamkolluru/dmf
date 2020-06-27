@@ -20,8 +20,6 @@ def pkg_details(ds_type):
 
 def connection(ds_type):
     db_det = pkg_details(ds_type)
-    # DB_URL_1 = "{}://{}/{}?driver=sql+server".format(
-    #     db_det['drivername'], db_det['host'], db_det['database'])
     DB_URL_2 = repr(sql_url(db_det['drivername'],
                             username=db_det['username'],
                             password=db_det['password'],
